@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java
 
+application.local.properties
+.idea/compiler.xml
+
 mybatis-config.xml
 log4j.xml
 
@@ -106,5 +109,7 @@ local.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
