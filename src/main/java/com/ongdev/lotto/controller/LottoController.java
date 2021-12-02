@@ -20,7 +20,7 @@ public class LottoController {
     }
 
     @RequestMapping(value = "/{no}")
-    public ResponseEntity getLottoNumberOne(@PathVariable("no")String no) {
+    public ResponseEntity getLottoNumberOne(@PathVariable String no) {
         return new ResponseEntity(lottoService.selectLottoNumberOne(no), HttpStatus.OK);
     }
 }
