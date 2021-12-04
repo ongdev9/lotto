@@ -1,10 +1,12 @@
 package com.ongdev.lotto.service;
 
-import com.ongdev.lotto.model.Lotto;
+import org.springframework.http.ResponseEntity;
 
 public interface LottoService {
 
     /* 원하는 회차 로또 번호 */
-    Lotto selectLottoNumberOne(String no);
+    ResponseEntity selectLottoNumberOne(String no) throws Exception;
 
+    /* 최신 로또 번호 */
+    ResponseEntity selectCurrentLottoNumber() throws Exception;
 }

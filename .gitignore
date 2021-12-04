@@ -7,7 +7,7 @@ application.local.properties
 .idea/compiler.xml
 
 mybatis-config.xml
-log4j.xml
+logback-local.properties
 
 lecture
 target

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LottoController {
 
-
     private LottoService lottoService;
 
     public LottoController(LottoService lottoService) {
@@ -20,7 +19,12 @@ public class LottoController {
     }
 
     @RequestMapping(value = "/{no}")
-    public ResponseEntity getLottoNumberOne(@PathVariable String no) {
+    public ResponseEntity getLottoNumberOne(@PathVariable String no) throws Exception{
         return new ResponseEntity(lottoService.selectLottoNumberOne(no), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "")
+    public ResponseEntity getCurrentLottoNumberOne() throws Exception{
+        return new ResponseEntity(lottoService.selectCurrentLottoNumber(), HttpStatus.OK);
     }
 }

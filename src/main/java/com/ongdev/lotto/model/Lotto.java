@@ -7,7 +7,6 @@ import org.apache.ibatis.type.Alias;
 @Data
 public class Lotto {
 
-    private String loNo;
     private String drwNo;
     private String drwNo1;
     private String drwNo2;
@@ -16,6 +15,6 @@ public class Lotto {
     private String drwNo5;
     private String drwNo6;
     private String bonusNo;
-    private String drwNDate;
+    private String drwNoDate;
 
 }

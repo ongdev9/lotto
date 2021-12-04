@@ -3,8 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ongdev.lotto.mapper.LottoMapper">
 
-<!--    <select id="selectLottoNumberOne" parameterType="String" resultType="lottoVO">-->
-<!--        SELECT drw_no, drw_no_1, drw_no_2, drw_no_3, drw_no_4, drw_no_5, bonus_no FROM lotto WHERE lo_no = ${no};-->
-<!--    </select>-->
+    <select id="selectLottoNumberOne" parameterType="String" resultType="lottoVO">
+        SELECT drw_no, drw_no_1, drw_no_2, drw_no_3, drw_no_4, drw_no_5, drw_no_6, bonus_no, drw_no_date FROM lotto WHERE drw_no = ${no};
+    </select>
 
 </mapper>
