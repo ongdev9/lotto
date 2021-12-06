@@ -1,16 +1,22 @@
 package com.ongdev.lotto.service;
 
 import com.ongdev.lotto.common.ApiResponseMessage;
+import com.ongdev.lotto.common.CommonUtil;
 import com.ongdev.lotto.mapper.LottoMapper;
 import com.ongdev.lotto.model.Lotto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.*;
+import java.util.stream.Stream;
+
 @Service
 public class LottoServiceImpl implements LottoService {
 
     private final LottoMapper lottoMapper;
+    
+
 
     public LottoServiceImpl(LottoMapper lottoMapper) {
         this.lottoMapper = lottoMapper;
@@ -27,6 +33,34 @@ public class LottoServiceImpl implements LottoService {
     public ResponseEntity selectCurrentLottoNumber() throws Exception {
 
         return setResponseEntity(lottoMapper.selectCurrentLottoNumber());
+    }
+
+    @Override
+    public ResponseEntity getRandomLottoNumber() throws Exception {
+
+        return new ResponseEntity(new ApiResponseMessage(HttpStatus.OK, CommonUtil.sortSet(new HashSet<Integer>())).getResult(), HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity getNumberToLottoNumber(String getNumber) throws Exception {
+
+
+        long count = getNumber.chars()
+                .filter(c -> c == ',')
+                .count();
+
+        /* 파라미터 값 확인*/
+        if(getNumber == null || !getNumber.contains(",") || count >6){
+            return new ResponseEntity(new ApiResponseMessage(HttpStatus.BAD_REQUEST,"").getResult(), HttpStatus.BAD_REQUEST);
+        }
+
+        Integer[] arr = Stream.of(getNumber.split(",")).mapToInt(Integer::parseInt).boxed().toArray(Integer[]::new);
+
+        Set<Integer> set = new HashSet<Integer>(Arrays.asList(arr));
+
+
+
+        return new ResponseEntity(new ApiResponseMessage(HttpStatus.OK, CommonUtil.sortSet(set)).getResult(), HttpStatus.OK);
     }
 
 
