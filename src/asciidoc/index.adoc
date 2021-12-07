@@ -1,16 +1,14 @@
 ifndef::snippets[]
 :snippets: ../../../target/generated-snippets
 endif::[]
-= Spring REST Docs JUnit 5 Sample
-Andy Wilkinson;
+= Lotto API
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
 
-Sample application demonstrating how to use Spring REST Docs with JUnit 5.
+로또 API
 
-`SampleJUnit5ApplicationTests` makes a call to a very simple service and produces three
-documentation snippets.
+### 원하는 회차 번호 가져오기
 
 One showing how to make a request using cURL:
 
@@ -23,3 +21,45 @@ include::{snippets}/no/http-request.adoc[]
 And one showing the HTTP response:
 
 include::{snippets}/no/http-response.adoc[]
+
+### 최신 회차 번호 가져오기
+
+One showing how to make a request using cURL:
+
+include::{snippets}/lotto/curl-request.adoc[]
+**
+One showing the HTTP request:
+
+include::{snippets}/lotto/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/lotto/http-response.adoc[]
+
+### 랜덤 번호 가져오기
+
+One showing how to make a request using cURL:
+
+include::{snippets}/random/curl-request.adoc[]
+**
+One showing the HTTP request:
+
+include::{snippets}/random/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/random/http-response.adoc[]
+
+### 원하는 번호 포함 랜덤 번호 가져오기
+
+One showing how to make a request using cURL:
+
+include::{snippets}/random_number/curl-request.adoc[]
+**
+One showing the HTTP request:
+
+include::{snippets}/random_number/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/random_number/http-response.adoc[]

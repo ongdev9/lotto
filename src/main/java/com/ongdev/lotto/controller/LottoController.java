@@ -11,8 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RequestMapping("/v1")
 @RestController
 public class LottoController {
@@ -24,7 +22,7 @@ public class LottoController {
     }
 
     @RequestMapping(value = "/{no}")
-    public ResponseEntity getLottoNumber(@PathVariable String no) throws Exception{
+    public ResponseEntity<Object> getLottoNumber(@PathVariable String no) throws Exception{
         return new ResponseEntity(lottoService.selectLottoNumberOne(no), HttpStatus.OK);
     }
 
