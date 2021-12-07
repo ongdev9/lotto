@@ -1,10 +1,10 @@
 # lottoAPI
 
-spring boot -2.5.7
-Java - 11
-mybatis
-spring REST Docs
-http://localhost:8080/docs/index.html
+spring boot -2.5.7 <br>
+Java - 11 <br>
+mybatis <br>
+spring REST Docs <br>
+http://localhost:8080/docs/index.html <br>
 
 1. 원하는 회차 번호 가져오기
 2. 최신 로또 번호 가져오기
